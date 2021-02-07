@@ -24,4 +24,7 @@ Route::get('sprovinsi',[ApiController::class, 'sprovinsi']);
 Route::get('indonesia/provinsi/kota',[ApiController::class, 'kota']);
 Route::get('indonesia/provinsi/kota/kecamatan',[ApiController::class, 'kecamatan']);
 Route::get('indonesia/provinsi/kota/kecamatan/kelurahan',[ApiController::class, 'kelurahan']);
+Route::get('hariini',[ApiController::class, 'hariini']);
+Route::get('global',[ApiController::class, 'global']);
+
 

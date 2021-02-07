@@ -1,16 +1,23 @@
 <?php
 
 namespace App\Http\Controllers\Api;
+
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Request;
+use App\Models\kecamatan;
 use App\Models\kelurahan;
 use App\Models\provinsi;
 use App\Models\kasus2;
 use App\Models\rw;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
+
+
+
 
 class ApiController extends Controller
 {
+    //berdasarkan id
     public function sprovinsi()
     {
         $tampil = DB::table('provinsis')
@@ -34,9 +41,20 @@ class ApiController extends Controller
             return response()->json($data,200);
 
     }
-
-
-    public function index()
+     // DAta global
+    public function global() 
+    {
+        $response = Http::get('https://api.kawalcorona.com/')->json();
+        $data = [
+            'Success'            => true,
+            'Data Api Global'   => $response,
+            'Message'           => 'Data Api Global Ditampilkan'        
+        ];
+        return response()->json($data, 200);
+    }
+    
+    //seluruh indonesia
+    public function indonesia()
     {
         $positif = DB::table('rws')->select('kasus2s.jumlah_positif','kasus2s.jumlah_sembuh','kasus2s.jumlah_meninggal')
             ->join ('kasus2s','rws.id','=','kasus2s.id_rw')
@@ -61,7 +79,10 @@ class ApiController extends Controller
             ];
                 return response()->json($res,200);
     }
+    
 
+    
+    // berdasarkan provinsi
     public function dprovinsi($id)
     {
         $tampil = DB::table('provinsis')
@@ -87,6 +108,7 @@ class ApiController extends Controller
 
 
     }
+      //berdasarkan kota
        public function kota()
        {
         $tampil = DB::table('kotas')
@@ -108,6 +130,8 @@ class ApiController extends Controller
         ];
             return response()->json($data,200);
        }
+
+       //berdasarkan kecamatan
        public function kecamatan()
        {
         $tampil = DB::table('kecamatans')
@@ -128,6 +152,8 @@ class ApiController extends Controller
         ];
             return response()->json($data,200);
        }
+
+       //berdasarkan kelurahan
        public function kelurahan()
        {
         $tampil = DB::table('kelurahans')
@@ -145,10 +171,14 @@ class ApiController extends Controller
             'Data Kota' => $tampil,
             'message' => 'Data Kasus Di tampilkan'
         ];
-            return response()->json($data,200);
+            return response()->json($data, 200);
        }
-
+     
+ 
+      
     }
+
+    
 
 
   
