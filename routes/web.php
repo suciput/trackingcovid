@@ -4,11 +4,16 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front.welcome');
 });
+
+
 
 Auth::routes();
 
+//frontend
+use App\Http\Controllers\WelcomeController;
+Route::resource('/',WelcomeController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -16,6 +21,8 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin']);
 
 use App\Http\Controllers\ProvinsiController;
 Route::resource('provinsi',ProvinsiController::class);
+
+
 
 use App\Http\Controllers\KotaController;
 Route::resource('kota',KotaController::class);
@@ -38,3 +45,4 @@ Route::view('Kasus1','livewire.home');
 Route::get('test', function(){
     return view('Hai');
 });
+
