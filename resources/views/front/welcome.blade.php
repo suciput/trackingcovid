@@ -81,50 +81,78 @@
 
         <div class="row">
 
-          <div class="col-lg-8 d-flex align-items-stretch">
-            <div class="icon">
-              <div class="row">
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="content">
-                  <div class="icon">
-                    <i class="icofont-sad"></i>
-                    <h4>Positif</h4>
-                    <p>{{$positif}}</p>
-                  </div>
-                  </div>
+          <div class="row icon-boxes">
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+                data-aos-delay="200">
+                <div class="icon-box">
+                    <center>
+                        <div class="icon"><i class="icofont-sad"></i></div>
+                        <h2 class="title"><a href="">POSITIF</a></h2>
+                        <div class="count-box">
+                            <h2>
+                               <span
+                                data-toggle="counter-up">{{ ($positif) }}</span>
+                            </h2>
+                        </div>
+                    </center>
                 </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <div class="content">
-                    <i class="icofont-heart-eyes"></i>
-                    <h4>Sembuh</h4>
-                    <p>{{$sembuh}}</p>
-                  </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <div class="content">
-                    <i class="icofont-worried"></i>
-                    <h4>Meninggal</h4>
-                    <p>{{$meninggal}}</p>
-                  </div>
-                </div>
-                </div><br><br><br>
-                <div class="col-lg-4 d-flex align-items-stretch">
-                  <div class="content">
-                    <i class="icofont-globe-alt"></i>
-                    <h4>DATA KASUS GLOBAL</h4>
-                    <p class="description"><?php echo $getglobal['value'] ?></p>
-                    <div class="text-center">   
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End .content-->
-          </div>
-        </div>
+            </div>
 
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+                data-aos-delay="300">
+                <div class="icon-box">
+                    <center>
+                        <div class="icon"><i class="icofont-heart-eyes"></i></div>
+
+                        <h2 class="title"><a href="">SEMBUH</a></h2>
+                        <div class="count-box">
+                            <h2>
+                                <span data-toggle="counter-up">{{ ($sembuh) }}</span>
+                                </p>
+                            </h2>
+                        </div>
+                    </center>
+                </div>
+            </div>
+ 
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+                data-aos-delay="400">
+
+                <div class="icon-box">
+                    <center>
+                        <div class="icon"><i class="icofont-worried"></i></div>
+
+                        <h4 class="title"><a href="">MENINGGAL</a></h4>
+                        <div class="count-box">
+                            <h2>
+                                <span data-toggle="counter-up">{{ ($meninggal) }}</span>
+                                </p>
+                            </h2>
+                        </div>
+                    </center>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in"
+                data-aos-delay="500">
+                <div class="icon-box">
+                    <center>
+                        <div class="icon"><i class="icofont-globe-alt"></i></div>
+
+                        <div class="count-box">
+                            <h2 class="title"><a href="">DATA KASUS DUNIA</a></h2>
+                            <span data-toggle="counter-up">
+                                <center><?php echo $getglobal['value']; ?>
+                                </center>
+                            </span>
+
+                        </div>
+                    </center>
+                </div>
+            </div>
+
+        </div>
+    </div>
       </div>
     </section><!-- End Why Us Section -->
 
@@ -199,7 +227,7 @@
                   <tr>
                     <td> <?php echo $no++ ?></td>
                     <td> <?php echo $data['attributes']['Country_Region'] ?></td>
-                    <td> <?php echo number_format($data['attributes']['Confirmed']) ?></td>
+                    <td> <?php echo ($data['attributes']['Confirmed']) ?></td>
                     <td><?php echo number_format($data['attributes']['Recovered'])?></td>
                     <td><?php echo number_format($data['attributes']['Deaths'])?></td>
                   </tr>
