@@ -43,7 +43,7 @@
  
 
    <!-- ======= Header ======= -->
-   <header id="header" class="fixed-top">
+   <header id="header" class="top">
     <div class="container d-flex align-items-center">
 
       <h1 class="logo mr-auto"><a href="index.html">Tracking Covid</a></h1>
@@ -87,7 +87,7 @@
                 <div class="icon-box">
                     <center>
                         <div class="icon"><i class="icofont-sad"></i></div>
-                        <h2 class="title"><a href="">POSITIF</a></h2>
+                        <h2 class="title"><a href="">Positif</a></h2>
                         <div class="count-box">
                             <h2>
                                <span
@@ -104,7 +104,7 @@
                     <center>
                         <div class="icon"><i class="icofont-heart-eyes"></i></div>
 
-                        <h2 class="title"><a href="">SEMBUH</a></h2>
+                        <h2 class="title"><a href="">Sembuh</a></h2>
                         <div class="count-box">
                             <h2>
                                 <span data-toggle="counter-up">{{ ($sembuh) }}</span>
@@ -122,7 +122,7 @@
                     <center>
                         <div class="icon"><i class="icofont-worried"></i></div>
 
-                        <h4 class="title"><a href="">MENINGGAL</a></h4>
+                        <h4 class="title"><a href="">Meninggal</a></h4>
                         <div class="count-box">
                             <h2>
                                 <span data-toggle="counter-up">{{ ($meninggal) }}</span>
@@ -137,16 +137,16 @@
                 data-aos-delay="500">
                 <div class="icon-box">
                     <center>
-                        <div class="icon"><i class="icofont-globe-alt"></i></div>
+                         <div class="icon"><i class="icofont-globe-alt"></i></div>
 
-                        <div class="count-box">
+                        {{-- <div class="count-box">
                             <h2 class="title"><a href="">DATA KASUS DUNIA</a></h2>
                             <span data-toggle="counter-up">
                                 <center><?php echo $getglobal['value']; ?>
                                 </center>
-                            </span>
+                            </span> --}}
 
-                        </div>
+                        </div> 
                     </center>
                 </div>
             </div>
@@ -198,7 +198,7 @@
   </div>
   </section>
 
-  <section id="global" class="global">
+  {{-- <section id="global" class="global">
     <div class="container">
 
       <div class="section-title" data-aos="zoom-out">
@@ -240,7 +240,7 @@
       </div>
 
     </div>
-    </section>
+  </section> --}}
    
 
     <!-- ======= Contact Section ======= -->
@@ -248,13 +248,9 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>HUBUNGI KAMI</h2>
+          <p></p>
         </div>
-      </div>
-
-      <div>
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="container">
         <div class="row mt-5">
@@ -263,7 +259,7 @@
             <div class="info">
               <div class="address">
                 <i class="icofont-google-map"></i>
-                <h4>Location:</h4>
+                <h4>Lokasi:</h4>
                 <p>Jalan Baru Raya VII</p>
               </div>
 

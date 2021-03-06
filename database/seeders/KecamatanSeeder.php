@@ -1,13 +1,18 @@
-a<?php
-
+<?php
 namespace Database\Seeders;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
-class KecamatanSeeder extends Seeder
+class kecamatanSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
     public function run()
     {
+
         $kecamatan = [
             ['id_kota' => 1, 'nama_kecamatan' => "Teupah Selatan"],
             ['id_kota' => 1, 'nama_kecamatan' => "Simeulue Timur"],
@@ -7104,7 +7109,7 @@ class KecamatanSeeder extends Seeder
             ['id_kota' => 514, 'nama_kecamatan' => "Jayapura Selatan"],
             ['id_kota' => 514, 'nama_kecamatan' => "Jayapura Utara"],
         ];
-        DB::table('kecamatans')->insert($kecamatan);
+        DB::table('kecamatans')->insert($kecamatans);
     }
 }
 
